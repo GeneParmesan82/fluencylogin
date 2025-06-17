@@ -6,8 +6,8 @@ describe('Login test scenarios', () => {
   it('Verify successful login', () => {
     //This test assumes valid login credentials are passed
     login.visit('/login')
-    login.userEmail('Tester@fluency.com')
-    login.userPassword('ValidPassword123')
+    login.userEmail(Cypress.env('user_email'))
+    login.userPassword(Cypress.env('user_password'))
     login.submit()
 
     //Assert login success
@@ -15,7 +15,7 @@ describe('Login test scenarios', () => {
     cy.contains('Welcome').should('be.visible') //or some other unique element on the dash, etc.
   })
 
-  it('Verify error for missing email/password', () => {
+  it('Verify error for missing email and password', () => {
     login.visit('/login')
     login.submit()
 
