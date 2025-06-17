@@ -6,7 +6,7 @@ describe('Login test scenarios', () => {
   it('Verify successful login', () => {
     login.visit();
     login.userEmail(); // uses Cypress.env internally
-    login.userPassword();
+    login.userPassword();  // uses Cypress.env internally
     login.submit();
 
     // Assert login success
