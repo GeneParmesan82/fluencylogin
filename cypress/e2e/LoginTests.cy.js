@@ -25,8 +25,8 @@ describe('Login test scenarios', () => {
 
   it('Verify error for incorrect credentials', () => {
     login.visit();
-    login.userBadEmail('NoAuth@test.com');
-    login.userBadPassword('123');
+    login.userEmail('NoAuth@test.com');
+    login.userPassword('123');
     login.submit();
 
     // Assert error message for failed authentication

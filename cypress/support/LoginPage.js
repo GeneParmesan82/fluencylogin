@@ -5,11 +5,11 @@ class LoginPage {
     cy.visit('/login');
   }
 
-  fillEmail(email = Cypress.env('user_email')) {
+  userEmail(email = Cypress.env('user_email')) {
     cy.get('#username').clear().type(email);
   }
 
-  fillPassword(password = Cypress.env('user_password')) {
+  userPassword(password = Cypress.env('user_password')) {
     cy.get('#password').clear().type(password);
   }
 
