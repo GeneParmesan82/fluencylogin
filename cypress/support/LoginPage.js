@@ -5,16 +5,28 @@ class LoginPage {
     cy.visit('/login');
   }
 
-  fillUsername(username) {
-    cy.get('#username').type(username);
+  userEmail(email) {
+    cy.get('#username').type(email);
   }
 
-  fillPassword(password) {
+  userPassword(password) {
     cy.get('.p-password-input').type(password);
   }
 
   submit() {
     cy.get('button.login-button').click();
+  }
+
+  forgotPassword() {
+    cy.get(':nth-child(5) > .p-button').click()
+  }
+
+  forgotPasswordEmail(email) {
+    cy.get('#__BVID__52').type(email)
+  }
+
+  requestPasswordReset() {
+    
   }
 }
 
