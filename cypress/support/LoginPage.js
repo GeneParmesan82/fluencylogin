@@ -11,19 +11,19 @@ class LoginPage {
   }
 
   userEmail() {
-    cy.get('input[name=username]').type(email);
+    cy.get('#username').type(email);
   }
 
   userPassword() {
-    cy.get('input[id=password]').type(password);
+    cy.get('#password').type(password);
   }
 
   userBadEmail(badEmail) {
-    cy.get('input[name="username"]').type(badEmail);
+    cy.get('#username').type(badEmail);
   }
 
   userBadPassword(badPassword) {
-    cy.get('input[id="password"]').type(badPassword)
+    cy.get('#password').type(badPassword)
   }
 
   submit() {
@@ -35,7 +35,7 @@ class LoginPage {
   }
 
   forgotPasswordEmail() {
-    cy.get('input[placeholder="email"]').type(email)
+    cy.get('#__BVID__70').type(email)
   }
 
   requestPasswordReset() {
