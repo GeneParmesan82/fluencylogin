@@ -18,15 +18,15 @@ class LoginPage {
   }
 
   forgotPassword() {
-    cy.get(':nth-child(5) > .p-button').click()
+    cy.get('.text-center > .p-button').click()
   }
 
   forgotPasswordEmail(email) {
-    cy.get('#__BVID__52').type(email)
+    cy.get('#__BVID__32').type(email)
   }
 
   requestPasswordReset() {
-    
+    cy.get(':nth-child(3) > .p-button').click()
   }
 }
 

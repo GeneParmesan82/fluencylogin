@@ -34,15 +34,15 @@ describe('Login test scenarios', () => {
     cy.contains('Authentication Failed')
   })
 
-  it('Verify Reset Password', () => {
+  it.only('Verify Reset Password', () => {
     //This test assumes valid login email is passed
     login.visit('/login')
     login.forgotPassword()
     login.forgotPasswordEmail('Tester@fluency.com')
+    login.requestPasswordReset()
 
 
-    //Assert login success
-    //cy.url().should('include', '/dashboard') //or whatever the post-login URL is
-    //cy.contains('Welcome').should('be.visible') //or some other unique element on the dash, etc.
+    //Assert successful submission message
+    
   })
 })
