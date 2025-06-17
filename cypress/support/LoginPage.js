@@ -26,7 +26,7 @@ class LoginPage {
   }
 
   requestPasswordReset() {
-    cy.contains('button', 'Request Password Reset').click();
+    cy.get('button[type="submit"][data-pc-name="button"]').click();
   }
 }
 
