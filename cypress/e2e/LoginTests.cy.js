@@ -34,7 +34,7 @@ describe('Login test scenarios', () => {
     cy.contains('Authentication Failed')
   })
 
-  it.only('Verify Reset Password', () => {
+  it('Verify Reset Password', () => {
     //This test assumes valid login email is passed
     login.visit('/login')
     login.forgotPassword()
@@ -43,6 +43,15 @@ describe('Login test scenarios', () => {
 
 
     //Assert successful submission message
-    
+    cy.contains('Your request has been received. If the E-mail address you entered matches our records password reset instructions will be sent there. Then try logging in again.')
+  })
+
+  it('Verify error for missing email on PW reset', () => {
+    login.visit('/login')
+    login.forgotPassword()
+    login.requestPasswordReset()
+
+    //Assert error message for missing email 
+    cy.contains('Please provide an E-mail address')
   })
 })
