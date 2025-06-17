@@ -1,13 +1,14 @@
 import LoginPage from "../support/LoginPage";
 
+
 describe('Login test scenarios', () => {
   const login = new LoginPage()
   
   it('Verify successful login', () => {
     //This test assumes valid login credentials are passed
     login.visit('/login')
-    login.userEmail()
-    login.userPassword()
+    login.userEmail(Cypress.env('user_email'))
+    login.userPassword(Cypress.env('user_password'))
     login.submit()
 
     //Assert login success
@@ -38,7 +39,7 @@ describe('Login test scenarios', () => {
     //This test assumes valid login email is passed
     login.visit('/login')
     login.forgotPassword()
-    login.forgotPasswordEmail()
+    login.forgotPasswordEmail(Cypress.env('user_email'))
     login.requestPasswordReset()
 
 
