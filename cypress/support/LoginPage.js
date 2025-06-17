@@ -26,7 +26,7 @@ class LoginPage {
   }
 
   requestPasswordReset() {
-    cy.get(':nth-child(3) > .p-button').click();
+    cy.get(cy.get('[data-pc-name="button"]')).click();
   }
 }
 
