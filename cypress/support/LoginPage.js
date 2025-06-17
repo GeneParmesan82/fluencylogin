@@ -1,24 +1,29 @@
 // cypress/pages/LoginPage.js
 
 class LoginPage {
+
+  email = Cypress.env('user_email')
+  password = Cypress.env('user_password')
+
+
   visit() {
     cy.visit('/login');
   }
 
   userEmail() {
-    cy.get('input[name="username"]').type(Cypress.env('user_email'));
+    cy.get('input[name=username]').type(email);
   }
 
   userPassword() {
-    cy.get('input[id="password"]').type(Cypress.env('user_password'));
+    cy.get('input[id=password]').type(password);
   }
 
-  userBadEmail(email) {
-    cy.get('input[name="username"]').type(email);
+  userBadEmail(badEmail) {
+    cy.get('input[name="username"]').type(badEmail);
   }
 
-  userBadPassword(password) {
-    cy.get('input[id="password"]').type(password)
+  userBadPassword(badPassword) {
+    cy.get('input[id="password"]').type(badPassword)
   }
 
   submit() {
@@ -30,7 +35,7 @@ class LoginPage {
   }
 
   forgotPasswordEmail() {
-    cy.get('input[placeholder="email"]').type(Cypress.env('user_email'))
+    cy.get('input[placeholder="email"]').type(email)
   }
 
   requestPasswordReset() {
