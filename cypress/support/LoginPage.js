@@ -1,26 +1,16 @@
 // cypress/pages/LoginPage.js
 
 class LoginPage {
-
-   
   visit() {
     cy.visit('/login');
   }
 
-  userEmail() {
-    cy.get('#username').type(Cypress.env('user_email'));
+  fillEmail(email = Cypress.env('user_email')) {
+    cy.get('#username').clear().type(email);
   }
 
-  userPassword() {
-    cy.get('#password').type(Cypress.env('user_password'));
-  }
-
-  userBadEmail(badEmail) {
-    cy.get('#username').type(badEmail);
-  }
-
-  userBadPassword(badPassword) {
-    cy.get('#password').type(badPassword)
+  fillPassword(password = Cypress.env('user_password')) {
+    cy.get('#password').clear().type(password);
   }
 
   submit() {
@@ -28,17 +18,16 @@ class LoginPage {
   }
 
   forgotPassword() {
-    cy.get('.text-center > .p-button').click()
+    cy.get('.text-center > .p-button').click();
   }
 
-  forgotPasswordEmail() {
-    cy.get('#__BVID__32').type(Cypress.env('user_email'))
+  forgotPasswordEmail(email = Cypress.env('user_email')) {
+    cy.get('#__BVID__32').clear().type(email);
   }
 
   requestPasswordReset() {
-    cy.get(':nth-child(3) > .p-button').click()
+    cy.get(':nth-child(3) > .p-button').click();
   }
 }
 
 export default LoginPage;
-
