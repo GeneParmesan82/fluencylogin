@@ -5,12 +5,20 @@ class LoginPage {
     cy.visit('/login');
   }
 
-  userEmail(email) {
+  userEmail() {
+    cy.get('#username').type(Cypress.env('user_email'));
+  }
+
+  userPassword() {
+    cy.get('.p-password-input').type(Cypress.env('user_password'));
+  }
+
+  userBadEmail(email) {
     cy.get('#username').type(email);
   }
 
-  userPassword(password) {
-    cy.get('.p-password-input').type(password);
+  userBadPassword(password) {
+    cy.get('.p-password-input').type(password)
   }
 
   submit() {
@@ -21,8 +29,8 @@ class LoginPage {
     cy.get('.text-center > .p-button').click()
   }
 
-  forgotPasswordEmail(email) {
-    cy.get('#__BVID__32').type(email)
+  forgotPasswordEmail() {
+    cy.get('#__BVID__32').type(Cypress.env('user_email'))
   }
 
   requestPasswordReset() {
