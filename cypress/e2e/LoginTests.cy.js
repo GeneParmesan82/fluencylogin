@@ -23,7 +23,7 @@ describe('Login test scenarios', () => {
     cy.contains('Please login using your E-mail address').should('be.visible');
   });
 
-  it('Verify error for incorrect credentials', () => {
+  it('Verify error for incorrect credentials/no auth', () => {
     login.visit();
     login.userEmail('NoAuth@test.com');
     login.userPassword('123');
@@ -33,7 +33,7 @@ describe('Login test scenarios', () => {
     cy.contains('Authentication Failed').should('be.visible');
   });
 
-  it('Verify Reset Password', () => {
+  it('Verify successful Reset Password submission.', () => {
     login.visit();
     login.forgotPassword();
     login.forgotPasswordEmail(); // uses Cypress.env internally
@@ -43,7 +43,7 @@ describe('Login test scenarios', () => {
     cy.contains('Your request has been received.').should('be.visible');
   });
 
-  it('Verify error for missing email on PW reset', () => {
+  it('Verify error when clicking Reset Password without an email', () => {
     login.visit();
     login.forgotPassword();
     login.requestPasswordReset();
