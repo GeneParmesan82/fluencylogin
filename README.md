@@ -2,7 +2,7 @@ Testing Overview Document:
 
 Below are the scenarios that I came up with, divided into two tiers.  The first tier of tests validate successful login and PW reset request, and also error handling for negative cases where there's missing information or the user has no authorization (ideally Test #4 uses credentials from an user who has been inactivated).  To complete Test #5 as an end-to-end test, we should go through the entire PW reset flow to verify that this functionality is working as expected (e.g. email is received, user can reset/login/etc).  I hit time constraints before I could automate Test #3 and Test #7, so these are manual for now.
 
-The second tier of tests are intended to be manual checks; these tests are still valuable but provide less value when it comes to automation and could be skipped.  Tests #8 and #9 expand upon Test #2 (which is automated).  Tests #10 and #11 expand upon Test #4 (which is automated).  I would feel comfortable leaving these as manual checks given our Tier 1 automated coverage 
+The second tier of tests are intended to be manual checks; these tests are still valuable but provide less value when it comes to automation and could be skipped.  Tests #8 and #9 expand upon Test #2 (which is automated).  Tests #10 and #11 expand upon Test #4 (which is automated).  I would feel comfortable leaving these as manual checks given our Tier 1 automated coverage.
 
 
 
